@@ -1,0 +1,96 @@
+if (name_hash == 37) {
+    key[15] = current_prog.longDescription;
+}
+if (name_hash == 65) {
+    key[29] = current_prog.description;
+}
+if (name_hash == 88) {
+    key[30] = current_prog.longDescription;
+}
+if (name_hash == 1094) {
+    key[22] = current_prog.description;
+}
+if (name_hash == 1116) {
+    key[28] = current_prog.description;
+}
+if (name_hash == 1131) {
+    key[23] = current_prog.longDescription;
+}
+if (name_hash == 1396) {
+    key[7] = current_prog.description;
+}
+if (name_hash == 1541) {
+    key[13] = current_prog.longDescription;
+}
+if (name_hash == 1661) {
+    key[1] = current_prog.description;
+}
+if (name_hash == 1812) {
+    key[9] = current_prog.longDescription;
+}
+if (name_hash == 2335) {
+    key[5] = current_prog.longDescription;
+}
+if (name_hash == 2393) {
+    key[14] = current_prog.longDescription;
+}
+if (name_hash == 2661) {
+    key[27] = current_prog.longDescription;
+}
+if (name_hash == 3609) {
+    key[20] = current_prog.description;
+}
+if (name_hash == 3862) {
+    key[3] = current_prog.description;
+}
+if (name_hash == 4173) {
+    key[16] = current_prog.longDescription;
+}
+if (name_hash == 4198) {
+    key[8] = current_prog.longDescription;
+}
+if (name_hash == 4428) {
+    key[2] = current_prog.longDescription;
+}
+if (name_hash == 4878) {
+    key[25] = current_prog.description;
+}
+if (name_hash == 5650) {
+    key[17] = current_prog.description;
+}
+if (name_hash == 6189) {
+    key[31] = current_prog.longDescription;
+}
+if (name_hash == 6427) {
+    key[4] = current_prog.longDescription;
+}
+if (name_hash == 7201) {
+    key[26] = current_prog.description;
+}
+if (name_hash == 7522) {
+    key[6] = current_prog.description;
+}
+if (name_hash == 7731) {
+    key[0] = current_prog.description;
+}
+if (name_hash == 8239) {
+    key[11] = current_prog.longDescription;
+}
+if (name_hash == 8244) {
+    key[19] = current_prog.longDescription;
+}
+if (name_hash == 8757) {
+    key[24] = current_prog.longDescription;
+}
+if (name_hash == 9071) {
+    key[12] = current_prog.description;
+}
+if (name_hash == 9244) {
+    key[18] = current_prog.description;
+}
+if (name_hash == 9303) {
+    key[10] = current_prog.description;
+}
+if (name_hash == 9824) {
+    key[21] = current_prog.description;
+}

