@@ -41,7 +41,7 @@ However, if the Sbox is corrupted, some of the values will not be possible for *
 
 Indeed, for example, let's take the case where `Sbox[a1] = b1` is corrupted, so that `Sbox[a1] = b2`.
 
-As the original Sbox is a permutation, we also have another `a2 != a1` so that `Sbox[a2] = b2`, but also, as now `Sbox[a1] = b2` there does not exist a value a such that `Sbox[a] = a1`
+As the original Sbox is a permutation, we also have another `a2 != a1` so that `Sbox[a2] = b2`, but also, as now `Sbox[a1] = b2` there does not exist a value **a** such that `Sbox[a] = b1`
 
 So, for every `0 <= i < 16` , there exists a value yi such that `c[i] = Sbox[xi] ^ rkey[i]`cannot be equal to yi, but also a value zi such that `c[i] = Sbox[xi] ^ rkey[i]` will be equal to zi twice more often.
 
@@ -119,24 +119,29 @@ if __name__ == "__main__":
 
     with open("ciphertexts.txt") as f:
         ciphertexts = [bytes.fromhex(x[:-1]) for x in f.readlines()]
-
+        
+    # Array of occurences of each value for each byte position of the ciphertexts
     frequences = [np.zeros(256, dtype="int") for i in range(16)]
-
     for ciphertext in ciphertexts:
         for i in range(16):
             frequences[i][ciphertext[i]] += 1
 
+    # Get, for one byte position (here the one for which max was the highest), 
+    # the value that does not appear any time and the value that appears most of the time
     c1 = np.where(frequences[1] == frequences[1].min())[0][0]
     d1 = np.where(frequences[1] == frequences[1].max())[0][0]
 
-    mins = []
+    mins = [] # array
     maxs = []
+    # Get, for each byte position, the value that does not appear any time and the value that appears most of the time
+    # max can be calculated from c1 and d1 thanks to a xor operation.
     for i in range(16):
         mins.append(np.where(frequences[i] == frequences[i].min())[0][0])
         maxs.append(c1 ^ d1 ^ mins[-1])
 
     myaes = myAES()
     for disp in range(256):
+        # disp is the tested value that disappeared from the Sbox, replaced by double
         key = [mins[i] ^ disp for i in range(16)]
         double = c1 ^ d1 ^ disp
         newkey = np.array(myaes.invExpandKey(key, disp, double))
